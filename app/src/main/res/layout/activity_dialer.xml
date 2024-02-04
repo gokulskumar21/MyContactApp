@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:hint="Enter Mobile Number"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            app:startIconDrawable="@drawable/ic_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"></com.google.android.material.textfield.TextInputEditText>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="0.8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSeven"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    android:text="@string/_7"
+                    app:backgroundTint="@color/primaryColor" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEight"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_8" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNine"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFour"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_4" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFive"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_5" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSix"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_6" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOne"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_1" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTwo"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_2" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnThree"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnStar"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/star" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnZero"
+                    style="@style/stDialButton"
+                    android:onClick="onClick"
+                    app:backgroundTint="@color/primaryColor"
+                    android:text="@string/_0" />
+
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCall"
+                style="@style/Widget.MaterialComponents.Button.Icon"
+                android:layout_width="150dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:text="@string/call"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/primaryLightColor"
+                app:icon="@drawable/ic_phone"
+                app:iconGravity="textStart" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
