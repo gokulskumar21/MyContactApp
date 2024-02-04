@@ -26,10 +26,10 @@
                 android:layout_gravity="center"
                 android:src="@drawable/ic_addimg"
                 app:civ_border_color="#FF000000"
-                app:civ_border_width="2dp" />
+                app:civ_border_width="2dp"
+                android:visibility="gone"/>
 
             <TextView
-                android:id="@+id/tvAddImage"
                 style="@style/stTextViewLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
