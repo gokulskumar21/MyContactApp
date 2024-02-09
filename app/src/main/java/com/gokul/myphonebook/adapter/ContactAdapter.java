@@ -69,7 +69,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
                 i.putExtra("contact_Firstname", contact.getStrFirstName().toString());
                 i.putExtra("contact_LastName", contact.getStrLastName().toString() );
                 i.putExtra("contact_NickName", contact.getStrNickName().toString() );
-                i.putExtra("contact_Image", contact.getStrImagePath().toString() );
                 context.startActivity(i);
 
             }
@@ -100,7 +99,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             // initializing all our variables on below line.
-            idIVContact = itemView.findViewById(R.id.idIVContact);
+           // idIVContact = itemView.findViewById(R.id.idIVContact);
             tvContactName = itemView.findViewById(R.id.tvContactName);
             tvContactNumber = itemView.findViewById(R.id.tvContactNumber);
             imgCall = itemView.findViewById(R.id.imgCall);
