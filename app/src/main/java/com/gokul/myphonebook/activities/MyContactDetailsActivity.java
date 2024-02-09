@@ -85,17 +85,17 @@ public class MyContactDetailsActivity extends AppCompatActivity {
 
         isInternetPresent = cd.isConnectingToInternet();
         setData();
-//        lvCall.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String strCall = edMobileNumber.getText().toString();
-//                Snackbar snackbar = Snackbar
-//                        .make(MyContactDetailsActivity.this.findViewById(android.R.id.content), "Calling on "+ strCall, Snackbar.LENGTH_LONG);
-//                snackbar.show();
-//                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", strCall, null));
-//                startActivity(intent);
-//            }
-//        });
+        lvCall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strCall = edMobileNumber.getText().toString();
+                Snackbar snackbar = Snackbar
+                        .make(MyContactDetailsActivity.this.findViewById(android.R.id.content), "Calling on "+ strCall, Snackbar.LENGTH_LONG);
+                snackbar.show();
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", strCall, null));
+                startActivity(intent);
+            }
+        });
 
 //        lvEmail.setOnClickListener(new View.OnClickListener() {
 //            @Override
