@@ -184,6 +184,7 @@ public class MyContactDetailsActivity extends AppCompatActivity {
 
         firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-d2cd1-default-rtdb.firebaseio.com/");
         databaseReference = firebaseDatabase.getReference("Contact").child(strID);
+        tvUpload.setText(strFullName.toString());
        tvName.setText(strLastName.toString());
         tvNickName.setText(strNickName.toString());
         edMobileNumber.setText(strMobileNum.toString());
