@@ -97,27 +97,27 @@ public class MyContactDetailsActivity extends AppCompatActivity {
             }
         });
 
-//        lvEmail.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                String strEmail = edEmail.getText().toString();
-//                if(!strEmail.isEmpty() && !strEmail.trim().equals(""))
-//                {
-//                    Uri uri = Uri.parse("mailto:" + strEmail)
-//                            .buildUpon()
-//                            .appendQueryParameter("subject", "Enter subject")
-//                            .appendQueryParameter("body", "Enter body")
-//                            .build();
-//                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, uri);
-//                    startActivity(Intent.createChooser(emailIntent, "Welcome"));
-//                }else
-//                {
-//                    Snackbar snackbar = Snackbar
-//                            .make(MyContactDetailsActivity.this.findViewById(android.R.id.content), "No Email-ID for this contact", Snackbar.LENGTH_LONG);
-//                    snackbar.show();
-//                }
-//            }
-//        });
+        lvEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String strEmail = edEmail.getText().toString();
+                if(!strEmail.isEmpty() && !strEmail.trim().equals(""))
+                {
+                    Uri uri = Uri.parse("mailto:" + strEmail)
+                            .buildUpon()
+                            .appendQueryParameter("subject", "Enter subject")
+                            .appendQueryParameter("body", "Enter body")
+                            .build();
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, uri);
+                    startActivity(Intent.createChooser(emailIntent, "Welcome"));
+                }else
+                {
+                    Snackbar snackbar = Snackbar
+                            .make(MyContactDetailsActivity.this.findViewById(android.R.id.content), "No Email-ID for this contact", Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            }
+        });
         lvAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
