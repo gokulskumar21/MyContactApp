@@ -23,4 +23,7 @@
     <string name="_0">0</string>
     <string name="hash">#</string>
     <string name="call">Call</string>
+    <string name="action_Delete">Delete</string>
+
+
 </resources>

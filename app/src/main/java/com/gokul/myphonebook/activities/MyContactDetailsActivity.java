@@ -193,57 +193,57 @@ public class MyContactDetailsActivity extends AppCompatActivity {
         edAddress.setText(strAddress.toString());
 
     }
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        MenuInflater menuInflater = getMenuInflater();
-//        menuInflater.inflate(R.menu.menu_main , menu);
-//        return true;
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu_main , menu);
+        return true;
+    }
 
-//    @Override
-//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-//        switch (item.getItemId())
-//        {
-//            case R.id.action_delete:
-//                MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(ContactDetailsActivity.this);
-//                materialAlertDialogBuilder.setTitle("Are you sure want to delete ?");
-//                materialAlertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        Query applesQuery = databaseReference.child("Contact").orderByChild("id").equalTo(strID);
-//
-//                        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(DataSnapshot dataSnapshot) {
-//                                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
-//                                    appleSnapshot.getRef().removeValue();
-//                                }
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(DatabaseError databaseError) {
-//                                Log.e(TAG, "onCancelled", databaseError.toException());
-//                            }
-//                        });
-//
-//                        databaseReference.removeValue();
-//                        // displaying a toast message on below line.
-//                        // opening a main activity on below line.
-//                        startActivity(new Intent(MyContactDetailsActivity.this, MainActivity.class));
-//                        Snackbar.make(MyContactDetailsActivity.this.findViewById(android.R.id.content) , "Done",Snackbar.LENGTH_LONG).show();
-//                    }
-//                });
-//                materialAlertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-////        materialAlertDialogBuilder.setBackground(getResources().get)
-//                materialAlertDialogBuilder.show();
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.action_delete:
+                MaterialAlertDialogBuilder materialAlertDialogBuilder = new MaterialAlertDialogBuilder(MyContactDetailsActivity.this);
+                materialAlertDialogBuilder.setTitle("Are you sure want to delete ?");
+                materialAlertDialogBuilder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Query applesQuery = databaseReference.child("Contact").orderByChild("id").equalTo(strID);
+
+                        applesQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot appleSnapshot: dataSnapshot.getChildren()) {
+                                    appleSnapshot.getRef().removeValue();
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                Log.e(TAG, "onCancelled", databaseError.toException());
+                            }
+                        });
+
+                        databaseReference.removeValue();
+                        // displaying a toast message on below line.
+                        // opening a main activity on below line.
+                        startActivity(new Intent(MyContactDetailsActivity.this, MainActivity.class));
+                        Snackbar.make(MyContactDetailsActivity.this.findViewById(android.R.id.content) , "Done",Snackbar.LENGTH_LONG).show();
+                    }
+                });
+                materialAlertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+//        materialAlertDialogBuilder.setBackground(getResources().get)
+                materialAlertDialogBuilder.show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
     private String getFileExt(Uri uri)
     {
         ContentResolver contentResolver = getContentResolver();
