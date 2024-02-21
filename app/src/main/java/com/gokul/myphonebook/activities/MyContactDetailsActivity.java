@@ -182,7 +182,7 @@ public class MyContactDetailsActivity extends AppCompatActivity {
         String strFirstName = getIntent().getExtras().getString("contact_Firstname");
         String strLastName = getIntent().getExtras().getString("contact_LastName");
 
-        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-d2cd1-default-rtdb.firebaseio.com/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-46fc7-default-rtdb.firebaseio.com/");
         databaseReference = firebaseDatabase.getReference("Contact").child(strID);
         tvUpload.setText(strFullName.toString());
        tvName.setText(strLastName.toString());

@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     private void setData() {
-        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-d2cd1-default-rtdb.firebaseio.com/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-46fc7-default-rtdb.firebaseio.com/");
         // on below line we are getting database reference.
         databaseReference = firebaseDatabase.getReference().child("Contact");
         getContact();

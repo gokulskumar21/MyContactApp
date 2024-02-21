@@ -35,9 +35,9 @@ public class AddNewContactActivity extends AppCompatActivity {
 
     private TextInputEditText edFirstName , edLastname ,edNickName, edMobileNumber , edEmail ,edAddress ;
     private MaterialButton btSave;
-    //private TextView tvAddImage;
+    private TextView tvAddImage;
     private ImageView imgProfilePic;
-    private FirebaseDatabase firebaseDatabase;
+    private  FirebaseDatabase firebaseDatabase;
     private DatabaseReference databaseReference;
     private ProgressBar savePB;
     public long lngContactID=0;
@@ -66,9 +66,8 @@ public class AddNewContactActivity extends AppCompatActivity {
         edEmail = findViewById(R.id.edEmail);
         edAddress = findViewById(R.id.edAddress);
         btSave= findViewById(R.id.btSave);
-       // tvAddImage= findViewById(R.id.tvAddImage);
         imgProfilePic = findViewById(R.id.imgProfilePic);
-        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-d2cd1-default-rtdb.firebaseio.com/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://myphonebook-46fc7-default-rtdb.firebaseio.com/");
         // find highest key
         // set tempId = highestKey+1
         contact = new Contact();
@@ -104,6 +103,37 @@ public class AddNewContactActivity extends AppCompatActivity {
                         String strEmail = edEmail.getText().toString();
                         String strAddress = edAddress.getText().toString();
                         String strNickName = edNickName.getText().toString();
+//                    databaseReference.orderByKey().limitToLast(1).addChildEventListener(new ChildEventListener() {
+//                        @Override
+//                        public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+//                            // on below line we are hiding our progress bar.
+//                             strID =  snapshot.getKey().toString();
+//                            Log.d("TestAdd", "Added Child" + strID);
+//                            Toast.makeText(getApplicationContext(), "Added" + strID, Toast.LENGTH_SHORT).show();
+//                        }
+//                        @Override
+//                        public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @androidx.annotation.Nullable String s) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @androidx.annotation.Nullable String s) {
+//                        }
+//
+//                        @Override
+//                        public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//                        }
+//                    });
+//                   int itCount =  SharedPrefManager.getInt("ID",0) + 1;
+//                   contact.setId(String.valueOf(itCount));
+
+
                         tempId++;
                         Snackbar snackbar = Snackbar.make(AddNewContactActivity.this.findViewById(android.R.id.content), "Please wait contact is saving", Snackbar.LENGTH_SHORT);
                         snackbar.show();
@@ -125,6 +155,11 @@ public class AddNewContactActivity extends AppCompatActivity {
                                 startActivity(new Intent(AddNewContactActivity.this, MainActivity.class));
                                 // displaying a toast message.
                                 Toast.makeText(AddNewContactActivity.this, "Contact Saved", Toast.LENGTH_SHORT).show();
+                                SharedPrefManager.putString("ImageFileName", "");
+                                SharedPrefManager.putString("ImagePath", "");
+                                //This method will be executed once the timer is over
+                                // Start your app main activity
+                                //Redirect to Splash Activity to our main Activity
                             }
                         }, 2000);
 
@@ -138,6 +173,13 @@ public class AddNewContactActivity extends AppCompatActivity {
             }
         });
 
+    }
+    public void loadImagefromGallery(View view) {
+        // Create intent to Open Image applications like Gallery, Google Photos
+        Intent gallery = new Intent();
+        gallery.setType("image/*");
+        gallery.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(gallery,RESULT_LOAD_IMG);
     }
 
     private boolean CheckAllFields() {

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "11259783818",
-    "project_id": "myphonebook-d2cd1",
-    "storage_bucket": "myphonebook-d2cd1.appspot.com"
+    "project_number": "988877160939",
+    "project_id": "myphonebook-46fc7",
+    "storage_bucket": "myphonebook-46fc7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:11259783818:android:a41aa0ad25fdfa93235b73",
+        "mobilesdk_app_id": "1:988877160939:android:97bd31931c27ac43fbd9ae",
         "android_client_info": {
           "package_name": "com.gokul.myphonebook"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyB_hBZ9b9xkQoo8k-dLN5xALBVgaW0RjFQ"
+          "current_key": "AIzaSyDW7piHHdeysjThXpm1dcFHdXciXvZ8WmQ"
         }
       ],
       "services": {
